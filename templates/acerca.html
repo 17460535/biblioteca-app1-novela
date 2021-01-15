@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titlepage %}
+Acerca
+{% endblock %}
+
+{% block body %}
+
+    {% for resultado in variable %}
+
+    <p>{{resultado.nombre}},{{resultado.apellido}}</p>
+
+    {% endfor %}
+
+{% endblock %}
