@@ -8,7 +8,7 @@ Bootstrap(app)
 
 # Configuracion a la conexión con postgres
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://rmucsedqnbitwb:8d106ab9e7347e8ff7e602fdb7c4000e86fcd86feb94e7173934c8e04a7443e0@ec2-52-72-65-76.compute-1.amazonaws.com:5432/df1bkr6n6o1q73'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres: // bzuvvwhdddncot : 0413c40db78faef0f6644939182fc0d60d022d52855ea7ed1009e83d1c9ccb8d @ ec2-54-85-13-135.compute-1.amazonaws.com : 5432 / dcls4msc7r7c7p'
 # OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 #Probe con mi base de datos y funciona, si tu contraseña es novelavega4 y en pgAdmin creaste Escolares ya no debe darte error el db.create_all()
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:12345@localhost:5432/armando'
@@ -46,7 +46,9 @@ def index():
 
 @app.route('/acerca')
 def acerca():
-    return render_template("acerca.html")
+    consulta = Alumno.query.all()
+    print(consulta)
+    return render_template("acerca.html", variable = consulta)
 
 
 if __name__ == "__main__":
