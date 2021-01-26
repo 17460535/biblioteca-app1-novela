@@ -1,48 +1,41 @@
-{% extends 'base.html' %} {% block title %} Main {% endblock %} {% block body %}
+{% extends 'base.html' %}
+{% block title %}
+Main
+{% endblock %}
+{% block body %}
 <p>
-  <img src={{url_for('static', filename="tec_logo.jpg" )}} height="250"
-  width="250">
+    <img src={{url_for('static', filename="tec_logo.jpg" )}} height="250" width="250">
 </p>
 <ul class="list-group">
-  {% for elemento in variable %}
-  <li class="list-group-item"><a href="\{{elemento}}">{{elemento}} </a></li>
-  {% endfor %}
+    {% for elemento in variable %}
+    <li class="list-group-item"> <a href="\{{elemento}}">{{elemento}} </a></li>
+    {% endfor %}
 </ul>
 <div class="row">
-  <div class="col-lg-2"></div>
-  <div class="col-lg-8">
-    <form
-      action="/"
-      method="POST"
-      class="form-horizontal"
-      style="margin: 0 auto"
-    >
-      <div class="form-group">
-        <label for="Nombre" class="col-lg-1 control-label">Nombre</label>
-        <div class="col-lg-12">
-          <input type="text" class="form-control" name="nombre" id="nombre" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
-        <br />
-        <div class="col-lg-12">
-          <input
-            type="text"
-            class="form-control"
-            name="apellido"
-            id="apellido"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-2">
-          <button type="submit" class="btn btn-success">Registrarse</button>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="col-lg-2"></div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <form action="/" method="POST" class="form-horizontal" style="margin:0 auto">
+            <div class="form-group">
+                <label for="Nombre" class="col-lg-1 control-label">Nombre</label>
+                <div class="col-lg-12">
+                    <input type="text" class="form-control" name="nombre" id="nombre" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
+                <br>
+                <div class="col-lg-12">
+                    <input type="text" class="form-control" name="apellido" id="apellido" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-2">
+                    <button type="submit" class="btn btn-success">Registrarse</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-2"></div>
 </div>
 <p>{{mensaje}}</p>
 {% endblock %}
