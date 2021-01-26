@@ -8,7 +8,7 @@ Bootstrap(app)
 
 # Configuracion a la conexión con postgres
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres: // bzuvvwhdddncot : 0413c40db78faef0f6644939182fc0d60d022d52855ea7ed1009e83d1c9ccb8d @ ec2-54-85-13-135.compute-1.amazonaws.com : 5432 / dcls4msc7r7c7p'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bzuvvwhdddncot:0413c40db78faef0f6644939182fc0d60d022d52855ea7ed1009e83d1c9ccb8d@ec2-54-85-13-135.compute-1.amazonaws.com:5432/dcls4msc7r7c7p'
 # OJOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 #Probe con mi base de datos y funciona, si tu contraseña es novelavega4 y en pgAdmin creaste Escolares ya no debe darte error el db.create_all()
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:12345@localhost:5432/armando'
