@@ -1,11 +1,35 @@
 {% extends 'base.html' %}
-
-{% block titlepage %}
+{% block title_page %}
 Acerca
-{% endblock %}
 
+{% endblock %}
 {% block body %}
-    {% for resultado in variable %}
-    <p>{{resultado.nombre}},{{resultado.apellido}}</p>
-    {% endfor %}
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<h1 class="display-6">Acerca</h1>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in arg %}
+            <tr>
+                <th scope="row">{{a.id}}</th>
+                <td>{{a.nombre}}</td>
+                <td>{{a.apellido}}</td>
+                <td>
+                    <a href="/editar/{{ a.id }}" class="btn btn-warning btn-xs">Editar</a>
+                    <a href="/eliminar/{{ a.id }}" class="btn btn-warning btn-xs">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
 {% endblock %}

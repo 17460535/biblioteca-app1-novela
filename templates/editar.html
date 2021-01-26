@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+    Editar
+{% endblock  %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" style="padding-top: 5%;">
+            <form  action="{{ url_for('actualizar') }}" method = "POST" class="form-horizontal" style="margin:0 auto">
+                <div class="form-group">
+                    <input type="hidden" name="id" id="id" value="{{ alumno.id }}">
+                    <label for="nombreE" class="col-lg-2 control-label">Nuevo nombre</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" name="nombreE" id="nombreE" value="{{ alumno.nombre }}"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="apellidoE" class="col-lg-2 control-label">Nuevo Apellido</label>
+                    <br>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" name="apellidoE" id="apellidoE" value="{{ alumno.apellido }}"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-2">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <a href="/../acerca" type="button" class="btn btn-success" style="margin-top: 3%;">Calcelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+    <p>{{mensaje}}</p>
+{% endblock %}
