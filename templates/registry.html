@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="register-box">
+  <div class="register-logo">
+    <a href="/home"><b>Registro en biblioteca</b> TecNM</a>
+    <br>
+    <br>
+  </div>
+
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">Nuevo usuario</p>
+
+      <form action="/registry" method="post">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nombre completo" id="nombre_usuario" name="nombre_usuario">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Correo electrónico" id="email" name="email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Contraseña" id="pwd" name="pwd">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Repite la contraseña" id="password" name="password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+              <label for="agreeTerms">
+               Acepto los <a href="#">términos y condiciones</a>
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+            {% if mensaje != "" %}
+              <p>{{mensaje}}, ir a <a href="{{url_for('login')}}">Login</a></p>
+            {% endif %}
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <a href="/login" class="text-center">Ya estoy registrado</a>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+
+{% endblock content%}

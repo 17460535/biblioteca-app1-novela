@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="register-box">
+  <div class="register-logo">
+    <a href="catalogoLibros"><b>Catálogo de libros</b> TecNM</a>
+    <br>
+    <br>
+  </div>
+
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">Registrar nuevo libro</p>
+
+      <form action="registrarLibros" method="POST">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nombre del libro" id="nombre" name="nombre">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Clasificación" id="clasificacion" name="clasificacion">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Formato" id="formato" name="formato">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Número de páginas" id="paginas" name="paginas">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="date" class="form-control" placeholder="Fecha de publicación" id="fecha" name="fecha">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+          <select name="select" id="select">
+            {% for autor in consulta %}
+            <option value="{{autor.id}}">{{autor.nombre}}</option>
+            {% endfor %}
+          </select>
+        <br>
+        </div>
+        <div>
+         <select name="editorial" id="editorial">
+            {% for editorial in conEditorial %}
+            <option value="{{editorial.id}}">{{editorial.nombre}}</option>
+            {% endfor %}
+          </select>
+        <br>
+        <br>
+        </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Registrar libro</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+
+{% endblock content%}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="login-box">
+  <div class="login-logo">
+    <a href="loginin"><b>Inicio de sesión</b> Biblioteca</a><br><br>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">¿Olvidaste tu contraseña? Te ayudamos a recuperarla</p>
+
+      <form action="recover-password.html" method="post">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Captura tu correo">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block">Enviar instrucciones de recuperación</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <p class="mt-3 mb-1">
+        <a href="login.html">Iniciar sesión</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.html" class="text-center">Registrarse</a>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+
+{% endblock content%}

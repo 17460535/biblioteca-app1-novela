@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="register-box">
+  <div class="register-logo">
+    <a href="catalogoAutores"><b>Catálogo de autores en biblioteca</b> TecNM</a>
+    <br>
+    <br>
+  </div>
+
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">Registrar nuevo autor</p>
+
+      <form action="registrarAutor" method="POST">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nombre" id="nombre" name="nombre">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Apellidos" id="apellido" name="apellido">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="date" class="form-control" placeholder="Fecha de nacimiento" id="fecha" name="fecha">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Registrar Autor</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+
+{% endblock content%}

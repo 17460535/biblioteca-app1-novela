@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="register-box">
+  <div class="register-logo">
+    <a href="catalogoLibros.html"><b>Editar en biblioteca</b> TecNM</a>
+    <br>
+    <br>
+  </div>
+
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">Editar libro</p>
+
+      <form action="{{ url_for('actualizarLibro')}}" method="POST">
+       <input type="hidden" name="id" id="id" value="{{ libro.id }}">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nombre del libro" id="nombre" name="nombre" value="{{ libro.titulo }}">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Autor" id="autor" name="autor" value="{{ libro.autor }}">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Clasificación" id="clasificacion" name="clasificacion" value="{{ libro.clasificacion }}">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Formato" id="formato" name="formato" value="{{ libro.formato }}">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Número de páginas" id="paginas" name="paginas" value="{{ libro.NoPaginas }}">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="date" class="form-control" placeholder="Fecha de publicación" id="fecha" name="fecha" value="{{ libro.fecha_publicacion }}">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Actualizar libro</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+
+{% endblock content%}

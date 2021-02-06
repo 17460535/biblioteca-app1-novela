@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="registrarLibros"><b>Registrar nuevo en biblioteca</b> TecNM</a>
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Título del libro</th>
+      <th scope="col">Autor del libro</th>
+      <th scope="col">Editorial</th>
+      <th scope="col">Clasificación</th>
+      <th scope="col">Formato</th>
+      <th scope="col">Número de páginas</th>
+      <th scope="col">Fecha de publicación</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th> 
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for l in catalogoLibros %}
+
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ l.titulo }}</td>
+        <td>{{ l.autor }}</td>
+        <td>{{ l.editorial }}</td>
+        <td>{{ l.clasificacion }}</td>
+        <td>{{ l.formato }}</td>
+        <td>{{ l.NoPaginas }}</td>
+        <td>{{ l.fecha_publicacion }}</td>
+      
+        <td><a href="/editarLibro/{{ l.id }}" class="btn btn-warning btn-xs">Editar</a></td>
+        <td><a href="/eliminarLibro/{{ l.id }}" class="btn btn-warning btn-xs">Eliminar</a></td>
+
+      </tr>      
+
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+{% endblock %}

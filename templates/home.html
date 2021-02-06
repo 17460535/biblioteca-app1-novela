@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              
+                {% if current_user.is_authenticated %}
+                  <li class="breadcrumb-item"><a href="/logout">Cerrar sesión</a></li>
+                {% else %}
+                  <li class="breadcrumb-item"><a href="/login">Ingresar</a></li>
+                  <li class="breadcrumb-item"><a href="/registry">Registrarse</a></li>
+                {% endif %}
+              
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Página principal de Biblioteca</h1><br>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Misión</h5>
+
+                <p class="card-text">
+                  La misión de la Biblioteca de la Universidad TecNM es dar apoyo al aprendizaje, la docencia, 
+                  la investigación y la gestión de la Universidad en su conjunto, 
+                  facilitando el acceso y difusión de recursos de información y 
+                  colaborando en los procesos de creación del conocimiento.
+                </p>
+
+                <a href="#" class="card-link">Me gusta</a>
+                <a href="#" class="card-link">Comentarios</a>
+              </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+              <div class="card-body">
+                <h5 class="card-title">Visión</h5>
+
+                <p class="card-text">
+                  La Biblioteca tiene como visión ser un espacio moderno, agradable y accesible, 
+                  orientada al usuario/a, referente informativo para la gestión y transmisión del conocimiento, 
+                  donde las nuevas tecnologías estén al alcance de todos. Vinculada con el exterior e integrada 
+                  en las metas de calidad y objetivos de la Universidad de Jaén; con una gestión eficaz, dinámica 
+                  y eficiente, capaz de provocar con su actividad unos/as usuarios/as mejor formados/as e informados/as; 
+                  que contribuya al aprendizaje permanente y adaptada a la innovación educativa que supone el Espacio 
+                  de Enseñanza Superior.
+                </p>
+                <a href="#" class="card-link">Me gusta</a>
+                <a href="#" class="card-link">Comentarios</a>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="m-0">Valores</h5>
+              </div>
+              <div class="card-body">
+
+                <p class="card-text">Los valores por los que se rige la actividad de la Biblioteca son:<br><br>
+
+                    La igualdad de oportunidades<br>
+                    La responsabilidad social<br>
+                    La orientación al usuario<br>
+                    La innovación educativa y tecnológica<br>
+                    El compromiso institucional<br>
+                </p>
+
+                <a href="#" class="btn btn-primary">Dejar opiniones</a>
+              </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0">Usuarios</h5>
+              </div>
+              <div class="card-body">
+
+                <p class="card-text">En general, son usuarios de la Biblioteca de la Universidad de Jaén toda persona, 
+                    tenga o no vinculación con la Universidad de Jaén.<br>
+                    <br>
+
+                    Son usuarios de pleno derecho de la Biblioteca de la Universidad de Jaén todos los miembros de la Comunidad universitaria:
+                    <br>
+
+                    El personal docente e investigador de la Universidad y Centros adscritos.
+                    <br>
+                    Los estudiantes de la Universidad y Centros Adscritos.
+                    <br>
+                    El personal de administración y servicios.
+                    <br>
+                    Profesorado y personal de administración y servicios jubilados.
+                    <br>
+                    Profesorado y becarios visitantes de otras universidades.
+                    <br>
+                    Los estudiantes visitantes de otras universidades.
+                    <br>
+                    Egresados/as de la Universidad de Tecn.
+                    <br>
+                    Personal colaborador o tutor externo a la Universidad de TecNM.
+                </p>
+                <a href="#" class="btn btn-primary">Dejar comentarios</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Proyecto final</h5>
+      <p>Sevicios en la nube</p>
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+    
+{% endblock content %}
